@@ -1,14 +1,8 @@
 ---
-import { redirect } from 'astro:middleware';
+import { redirect } from 'astro:redirect';
 
-// Redirect to the PDF file
-const pdfUrl = '/Clinton-Marrs-Portfolio_Manager-Brand-Studio-Webflow.pdf';
-return new Response(null, {
-  status: 302,
-  headers: {
-    'Location': pdfUrl,
-    // The headers below tell browsers to download the file instead of displaying it
-    'Content-Disposition': 'attachment; filename="Clinton-Marrs-Portfolio_Manager-Brand-Studio-Webflow.pdf"',
-  },
-});
+export const prerender = true;
+
+// Redirect to your PDF (served from /public)
+redirect('/Clinton-Marrs-Portfolio_Manager-Brand-Studio-Webflow.pdf', 302);
 ---
