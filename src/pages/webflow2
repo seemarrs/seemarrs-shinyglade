@@ -1,0 +1,4 @@
+---
+import { redirect } from 'astro:middleware';
+return Response.redirect('Clinton Marrs - Manager, Brand Studio - Weblflow.pdf', 302);
+---
